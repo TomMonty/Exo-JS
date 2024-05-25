@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let city = {
+            name: 'Gotham City',
+            mayor: { givenName: 'mère', surname: 'nature' },
+            shops: [
+                { name: 'Boulangerie', coord: { x: 10, y: 8 }, note: 1.7 },
+                { name: 'Épicerie', coord: { x: 10, y: 10 }, note: 3.1 },
+                { name: 'Mairie', coord: { x: 2, y: 14 }, note: 2.5 },
+                { name: 'Droguerie', coord: { x: 14, y: 8 }, note: 5 },
+            ]
+        };
+
+        let medianX = (city.shops[0].coord.x + city.shops[2].coord.x) / 2;
+        let medianY = (city.shops[0].coord.y + city.shops[2].coord.y) / 2;
+
+        city.shops.push({ name: 'Carrosserie', coord: { x: medianX, y: medianY }, note: 4.7 });
+
+        let sommeNotes = 0;
+        for (let shop of city.shops) {
+            sommeNotes += shop.note;
+        }
+        let moyenne = sommeNotes / city.shops.length;
+
+        console.log(moyenne);
+        console.log(city.shops);
+
+
+    </script>
+</body>
+
+</html>
